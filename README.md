@@ -17,7 +17,8 @@ Using TypeScript to build a client and api to that displays Twitter data
 
 ### Things to improve
 - When a user has no tweets we need to handle this error and display a nice message to the user
-- Use a custom Lambda authorizer to add Authorizationto the API
+- Use a custom Lambda authorizer to add Authorization to the API
+- More tests needed on both the api and frontend
 - UI styling is barebones need improvement
 - Add more action types to handle the error / loading state
-- If you click the search button twice the state doesnt change and so the page hangs on loading
+- If you click the search button twice the state doesn't change and so the page hangs on loading
