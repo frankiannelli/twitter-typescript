@@ -16,6 +16,7 @@ Using TypeScript to build a client and api to that displays Twitter data
 - write tests
 
 ### Things to improve
+- need error handling on frontend. iIf the api is down the page hangs on loading
 - When a user has no tweets we need to handle this error and display a nice message to the user
 - Use a custom Lambda authorizer to add Authorization to the API
 - More tests needed on both the api and frontend

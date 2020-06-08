@@ -62,9 +62,7 @@ export class DetailsContainer extends React.Component<DetailsProps, DetailsState
                 </div>
                 <h5 className="mt-4">Last 5 Tweets</h5>
                 {this.state.fetching ? (
-                    <div className="spinner-border" role="status">
-                        <span className="sr-only">Loading...</span>
-                    </div>
+                    <br />
                 ) : (
                     this.props.tweets.map((tweet) => (
                         <div key={tweet.text} className="card my-2">
