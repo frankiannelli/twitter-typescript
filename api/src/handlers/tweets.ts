@@ -27,6 +27,10 @@ export const handler: APIGatewayProxyHandler = async (event) => {
     if (Number.isNaN(userId)) {
       return {
         statusCode: 400,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Credentials': true,
+        },
         body: JSON.stringify('bad request'),
       };
     }
@@ -36,6 +40,10 @@ export const handler: APIGatewayProxyHandler = async (event) => {
     if (!tweetData.length) {
       return {
         statusCode: 404,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Credentials': true,
+        },
         body: JSON.stringify('not found'),
       };
     }
@@ -44,12 +52,20 @@ export const handler: APIGatewayProxyHandler = async (event) => {
 
     return {
       statusCode: 200,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': true,
+      },
       body: JSON.stringify(mappedTweetData),
     };
   } catch (err) {
     console.log(err);
     return {
       statusCode: 500,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': true,
+      },
       body: JSON.stringify({
         message: 'Internal server error',
       }),

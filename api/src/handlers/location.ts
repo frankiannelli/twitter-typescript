@@ -39,6 +39,10 @@ export const handler: APIGatewayProxyHandler = async (event) => {
     if (!locationData.length) {
       return {
         statusCode: 404,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Credentials': true,
+        },
         body: JSON.stringify('not found'),
       };
     }
@@ -53,12 +57,20 @@ export const handler: APIGatewayProxyHandler = async (event) => {
 
     return {
       statusCode: 200,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': true,
+      },
       body: JSON.stringify(mappedLocationData),
     };
   } catch (err) {
     console.log(err);
     return {
       statusCode: 500,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': true,
+      },
       body: JSON.stringify({
         message: 'internal server error',
       }),

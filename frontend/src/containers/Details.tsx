@@ -8,7 +8,7 @@ interface UserParams {
     id: string;
 }
 
-interface UserProps {
+interface DetailsProps {
     tweets: Tweet[];
     fetchTweets: Function;
     users: User[];
@@ -16,12 +16,12 @@ interface UserProps {
     match?: match<UserParams>;
 }
 
-interface UserState {
+interface DetailsState {
     fetching: boolean;
 }
 
-export class DetailsContainer extends React.Component<UserProps, UserState> {
-    constructor(props: UserProps) {
+export class DetailsContainer extends React.Component<DetailsProps, DetailsState> {
+    constructor(props: DetailsProps) {
         super(props);
 
         this.state = {
@@ -35,7 +35,7 @@ export class DetailsContainer extends React.Component<UserProps, UserState> {
         }
     }
 
-    componentDidUpdate(prevProps: UserProps): void {
+    componentDidUpdate(prevProps: DetailsProps): void {
         if (prevProps.tweets[0]?.text !== this.props.tweets[0]?.text) {
             this.setState({ fetching: false });
         }

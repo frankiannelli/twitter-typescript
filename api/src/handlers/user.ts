@@ -4,7 +4,7 @@ import { twitterClient } from '../clients/twitter';
 
 interface UserData extends ResponseData {
   id: string;
-  userName: string;
+  name: string;
   handle: string;
   profileImage: string;
   followerCount: string;
@@ -32,13 +32,17 @@ export const handler: APIGatewayProxyHandler = async (event) => {
     if (!userData.length) {
       return {
         statusCode: 404,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Credentials': true,
+        },
         body: JSON.stringify('not found'),
       };
     }
 
     const mappedUserData = userData.map((user) => ({
       id: user.id,
-      userName: user.userName,
+      userName: user.name,
       handle: user.screen_name,
       profileImage: user.profile_image_url,
       followerCount: user.followers_count,
@@ -46,12 +50,20 @@ export const handler: APIGatewayProxyHandler = async (event) => {
 
     return {
       statusCode: 200,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': true,
+      },
       body: JSON.stringify(mappedUserData),
     };
   } catch (err) {
     console.log(err);
     return {
       statusCode: 500,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': true,
+      },
       body: JSON.stringify({
         message: 'internal server error',
       }),
