@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Component should render without throwing an error 1`] = `
+<div
+  className="container"
+>
+  <h1
+    className="py-5 mb-5"
+  >
+    Twitter User Search
+  </h1>
+  <form>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="searchInput"
+      >
+        Search For User
+      </label>
+      <input
+        className="form-control"
+        id="searchInput"
+        onChange={[Function]}
+        placeholder="Barrack Obama"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group my-3"
+    >
+      <label
+        htmlFor="searchType"
+      >
+        Search By
+      </label>
+      <select
+        className="form-control"
+        id="searchType"
+        onChange={[Function]}
+        value="name"
+      >
+        <option
+          value="name"
+        >
+          User
+        </option>
+        <option
+          value="location"
+        >
+          Location
+        </option>
+      </select>
+    </div>
+    <div
+      className="form-group"
+    >
+      <button
+        className="btn btn-primary"
+        disabled={true}
+        onClick={[Function]}
+        type="submit"
+      >
+        Search for users
+      </button>
+    </div>
+  </form>
+</div>
+`;
